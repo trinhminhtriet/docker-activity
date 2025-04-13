@@ -6,18 +6,18 @@ VERSION := $(shell git describe --tags)
 
 default: build
 
-upgrade:
+tidy:
 	go get -u && go mod tidy
 
 build:
 	CGO_ENABLED=0 go build \
-	-ldflags "-s -w -X '${PACKAGE}/internal.VERSION=${VERSION}' -X '${PACKAGE}/internal.DATE=${DATE}'" \
-	-a -tags netgo -o dist/${NAME} main.go
+		-ldflags "-s -w -X '${PACKAGE}/internal.VERSION=${VERSION}' -X '${PACKAGE}/internal.DATE=${DATE}'" \
+		-a -tags netgo -o dist/${NAME} main.go
 
 build-and-link:
 	go build \
 		-ldflags "-s -w -X '${PACKAGE}/internal.VERSION=${VERSION}' -X '${PACKAGE}/internal.DATE=${DATE}'" \
-	-a -tags netgo -o dist/${NAME} main.go
+		-a -tags netgo -o dist/${NAME} main.go
 	ln -s ${PWD}/dist/${NAME} /usr/local/bin/${NAME}
 
 release:
