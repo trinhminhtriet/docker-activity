@@ -1,5 +1,9 @@
 # Docker Activity
 
+> **⚠️ Notice: Work in Progress**
+
+> This project is not yet complete and is still being developed.
+
 🚀 Monitor Docker containers' stats and energy usage with Intel RAPL support, built for efficiency!
 
 ## ✨ Features
