@@ -16,6 +16,8 @@ end_of_line = lf
 # Makefiles require tabs
 [Makefile]
 indent_style = tab
+indent_size = 4
+tab_width = 4
 
 # YAML files
 [*.{yml,yaml}]
